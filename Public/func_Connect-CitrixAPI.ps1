@@ -52,12 +52,12 @@ $getBearerToken = Invoke-RestMethod -Method 'Post' -Uri $uri -Body (ConvertTo-Js
 $bearerToken = $getBearerToken.token
 $bearerPrincipal = "Your Authorization Pricipal is:" + $getBearerToken.principal
 
-Write-Host "$bearerPrincipal`r`n" -ForegroundColor Yellow
+Write-Verbose "$bearerPrincipal`r`n" -Verbose
 
-Write-Host "Your Authorization header is: "
+Write-Verbose "Your Authorization header is: " -Verbose
 $authHeader = "CwsAuth Bearer=$bearerToken"
-Write-Host "$authHeader"
+Write-Verbose "$authHeader" -Verbose
 
-return $authHeader
+return $authHeader 
 
 }

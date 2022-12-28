@@ -23,7 +23,7 @@ function Get-PartnerCustomerAccessInfo {
     $customername = Get-PartnerCustomerInfo -token $token -partnerID $partnerID -customerID $customerID | select displayName
     $customername = $customername.displayName
 
-    Write-Host "Access Information for customer: $customername" -ForegroundColor Yellow
+    Write-Verbose "Access Information for customer: $customername" -Verbose
 
     
     return $response
