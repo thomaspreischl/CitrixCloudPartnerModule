@@ -21,7 +21,7 @@ function Get-PartnerConnectionInfo {
     #$response = $response.items
 
     
-    $response = $response | select connectionId, partnerId, customerId, type, `
+    $response = $response | Select-Object connectionId, partnerId, customerId, type, `
                 @{Name="CustomerAdminDisplayName"; Expression={ $_.customerInformation.displayName}}, @{Name="CustomerorgId"; Expression={ $_.customerInformation.orgId}},`
                 @{Name="CustomeradminFullName"; Expression={ $_.customerInformation.adminFullName}},@{Name="CustomerAdminEmail"; Expression={ $_.customerInformation.adminEmail}},`
                 services, federatedDomains

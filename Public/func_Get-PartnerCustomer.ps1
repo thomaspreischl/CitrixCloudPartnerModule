@@ -22,14 +22,14 @@ function Get-PartnerCustomer {
 
     if (!$customerID) { 
 
-    $response = $response.items | select notifictionCount ,@{Name="CustomerInformation"; Expression={ $_.customerInformation.displayName}}, @{Name="orgId"; Expression={ $_.customerInformation.orgId}},customerId, type, @{Name="adminFullName"; Expression={ $_.customerInformation.adminFullName}},@{Name="adminEmail"; Expression={ $_.customerInformation.adminEmail}}, services, federatedDomains, connectionId, serviceStates
+    $response = $response.items | Select-Object notifictionCount ,@{Name="CustomerInformation"; Expression={ $_.customerInformation.displayName}}, @{Name="orgId"; Expression={ $_.customerInformation.orgId}},customerId, type, @{Name="adminFullName"; Expression={ $_.customerInformation.adminFullName}},@{Name="adminEmail"; Expression={ $_.customerInformation.adminEmail}}, services, federatedDomains, connectionId, serviceStates
     return $response
     
      }
      else {
 
 
-    $response = $response.items |Where-Object {$_.customerId -eq $customerID} | select notifictionCount ,@{Name="CustomerInformation"; Expression={ $_.customerInformation.displayName}}, @{Name="orgId"; Expression={ $_.customerInformation.orgId}},customerId, type, @{Name="adminFullName"; Expression={ $_.customerInformation.adminFullName}},@{Name="adminEmail"; Expression={ $_.customerInformation.adminEmail}}, services, federatedDomains, connectionId, serviceStates
+    $response = $response.items |Where-Object {$_.customerId -eq $customerID} | Select-Object notifictionCount ,@{Name="CustomerInformation"; Expression={ $_.customerInformation.displayName}}, @{Name="orgId"; Expression={ $_.customerInformation.orgId}},customerId, type, @{Name="adminFullName"; Expression={ $_.customerInformation.adminFullName}},@{Name="adminEmail"; Expression={ $_.customerInformation.adminEmail}}, services, federatedDomains, connectionId, serviceStates
     return $response
     }
 

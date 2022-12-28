@@ -20,7 +20,7 @@ function Get-PartnerCustomerConnection {
     #$response = $response.items
 
     
-    $response = $response.items |select connectionId, partnerId, customerId, type, `
+    $response = $response.items |Select-Object connectionId, partnerId, customerId, type, `
                 @{Name="CustomerAdminDisplayName"; Expression={ $_.customerInformation.displayName}}, @{Name="CustomerorgId"; Expression={ $_.customerInformation.orgId}},`
                 @{Name="CustomeradminFullName"; Expression={ $_.customerInformation.adminFullName}},@{Name="CustomerAdminEmail"; Expression={ $_.customerInformation.adminEmail}},`
                 @{Name="PartnerAdminDisplayName"; Expression={ $_.partnerInformation.displayName}}, @{Name="PartnerorgId"; Expression={ $_.partnerInformation.orgId}},`
