@@ -1,10 +1,9 @@
-
-function Get-PartnerCustomerInfo {
+function Get-PartnerCustomerServiceStates {
   <#
 	    .SYNOPSIS
-	    Get connected customer's account information for Partner.
+	    Get customer citrix cloud service states.
 	    .DESCRIPTION
-	    This function gives you connected customer's account information for Partner. You will get back the displayname, address, city, phone, etc.
+	    You will get the service state for all existing citrix cloud services.Are the services in production, trial or not onboarded yet. also how many stock order licenses are used. and you will also get the days to expire.
 	    .PARAMETER partnerID
 	    partnerID of your Citrix Cloud Tenant is mandatory to connect to the right Tenant.
       .PARAMETER customerID
@@ -13,7 +12,7 @@ function Get-PartnerCustomerInfo {
 	    token should be the following content:'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....'
       Think its easier to put it in a variable. 
 	    .EXAMPLE
-	    Get-PartnerCustomerInfo -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -partnerID '3asdf21' -customerID '3ngking1jtejtw'
+	    Get-PartnerCustomerServiceStates -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -partnerID '3asdf21' -customerID '3ngking1jtejtw'
 	    .INPUTS
 	    System.String
 	    .OUTPUTS
@@ -25,8 +24,8 @@ function Get-PartnerCustomerInfo {
 	#>
     param(
       [parameter(Mandatory=$true)] $partnerID,
-      [parameter(Mandatory=$true)] $customerID,
-      $token
+      $token,
+      [parameter(Mandatory=$true)]$customerID
     )
 
 
@@ -37,12 +36,17 @@ function Get-PartnerCustomerInfo {
         Authorization = "$token"
         }
 
-    $Uri = $baseUrl + "/"+ $partnerID + "/" + $Resource + "/" + $customerID + "/information"
+    $Uri = $baseUrl + "/"+ $partnerID + "/" + $Resource + "/" + $customerID + "/servicestates"
 
 
     $response = Invoke-RestMethod -Method GET -Uri $Uri -Headers $headers 
-    $response = $response
     
+
+    
+    $response = $response.items 
+
+
+
     return $response
-    
-}
+
+    }

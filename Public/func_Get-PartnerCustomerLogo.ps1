@@ -1,16 +1,18 @@
-function Get-PartnerCustomerCount {
+function Get-PartnerCustomerLogo {
   <#
 	    .SYNOPSIS
-	    Get the count of customer detailed information.
+	    Get connected customer's account logo url for partner.
 	    .DESCRIPTION
-	    This function gives you the count of customer detailed information. This means, how many customers are managed with the used partner account..
+	    If a customer account logo is currently set, you will get it back here.
 	    .PARAMETER partnerID
 	    partnerID of your Citrix Cloud Tenant is mandatory to connect to the right Tenant.
+      .PARAMETER customerID
+	    customerID of your Citrix Cloud customer is mandatory to get information for the right tenant.
       .PARAMETER token
 	    token should be the following content:'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....'
       Think its easier to put it in a variable. 
 	    .EXAMPLE
-	    Get-PartnerCustomerCount -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -partnerID '3asdf21'
+	    Get-PartnerCustomerLogo -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -partnerID '3asdf21' -customerID '3ngking1jtejtw'
 	    .INPUTS
 	    System.String
 	    .OUTPUTS
@@ -20,29 +22,31 @@ function Get-PartnerCustomerCount {
 	    .LINK
 	    https://www.thomaspreischl.de
 	#>
-
     param(
       [parameter(Mandatory=$true)] $partnerID,
-      $token
+      $token,
+      [parameter(Mandatory=$true)]$customerID
     )
 
 
     $baseUrl = "https://partner.citrixworkspacesapi.net"
-    $Resource = "customers/count"
+    $Resource = "customers"
 
     $headers = @{
         Authorization = "$token"
         }
 
-    $Uri = $baseUrl + "/"+ $partnerID + "/" + $Resource 
+    $Uri = $baseUrl + "/"+ $partnerID + "/" + $Resource + "/" + $customerID + "/logo"
 
 
     $response = Invoke-RestMethod -Method GET -Uri $Uri -Headers $headers 
-    $response = $response
+    
 
     
+    $response = $response.items 
+
+
 
     return $response
 
     }
-    
