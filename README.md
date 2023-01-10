@@ -9,7 +9,7 @@ The function uses the Invoke-RestMethod command to make the authorization on Cit
 ### How to use “Connect-CitrixAPI”?
 Connect-CitrixAPI -partnerID '3asdf21' -ClientID 'no23j4m-352e-4fa1-a900-123sdf123' -ClientSecret '3k3l-1jk54J123nd-GKAGhZUQ=='
 
-Output:
+**Output:**
 
 
 Your Authorization Pricipal is:thomas.preischl@googlemail.com
@@ -29,7 +29,7 @@ Get all information about one customer with specified OrgID
 
 Get-PartnerCustomer -token $authbearer -partnerID $partnerID | Where-Object {$_.OrgID -eq '1234567'}
 
-Output:
+**Output:**
 
 notifictionCount    : 0
 CustomerInformation : Meister44 GmbH
@@ -50,7 +50,7 @@ Filter multiple attributes over all your customers.
 
 Get-PartnerCustomer -token $authbearer -partnerID '3asdf21' | select CustomerInformation, notifictionCount, OrgID
 
-Output:
+**Output:**
 
 
 CustomerInformation                                                  notifictionCount orgId   
@@ -69,7 +69,7 @@ With this function the partner – customer link for a specific customer can be 
 ### How to use “Get-PartnerConnectionInfo”?
 Get-PartnerConnectionInfo -token $authbearer -partnerID '3asdf21' -customerID '3ngking1jtejtw'
 
-Output:
+**Output:**
 
 
 connectionId             : b3c00dfc-32b6-4573-863a-2f294a7d4e1f
@@ -90,7 +90,7 @@ This function gives you the number of support tickets for the customer.
 
 Get-PartnerCustomerCaseCount -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -partnerID '3asdf21' -customerID '3ngking1jtejtw'
 
-Output:
+**Output:**
 
 
 customerId       count statusCode message
@@ -104,7 +104,7 @@ This function gives you information, which access type the user which is used fo
 ### How to use “Get-PartnerCustomerAccessInfo”?
 Get-PartnerConnectionInfo -token $authbearer -partnerID '3asdf21' -customerID '3ngking1jtejtw'
 
-Output:
+**Output:**
 
 
 VERBOSE: Access Information for customer: Meister44 GmbH
@@ -120,7 +120,7 @@ This function gives you the number of support tickets for the customer.
 ### How to use “Get-PartnerCustomerConnection”?
 Get-PartnerCustomerConnection -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -partnerID '3asdf21' -customerID '3ngking1jtejtw'
 
-Output:
+**Output:**
 
 
 connectionId             : b00fcd3c-32b6-4573-863a-294dea2f174f
@@ -144,7 +144,7 @@ This function gives you the count of customer detailed information. This means, 
 ### How to use “Get-PartnerCustomerCount”?
 Get-PartnerCustomerCount -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -partnerID '3asdf21'
 
-Output:
+**Output:**
 
 
 39
@@ -155,7 +155,7 @@ Get the current cloud license active use of cvad for specific customer and also 
 ### How to use “Get-PartnerCustomerCVADActiveUse”?
 Get-PartnerCustomerCVADActiveUse -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -partnerID '3asdf21' -customerID '3ngking1jtejtw'
 
-Output:
+**Output:**
 
 License Active Use Information for customer: Meister44 GmbH
 Customer is licensed with User/Device Licenses.
@@ -179,7 +179,7 @@ Get connected customer’s account information for Partner. You will get back th
 ### How to use “Get-PartnerCustomerInfo”?
 Get-PartnerCustomerInfo -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -partnerID '3asdf21' -customerID '3ngking1jtejtw'
 
-Output:
+**Output:**
 
 
 name             : 3ngking1jtejtw
@@ -208,7 +208,7 @@ If a customer account logo is currently set, you will get it back here.
 ### How to use “Get-PartnerCustomerLogo”?
 Get-PartnerCustomerLogo -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -partnerID '3asdf21' -customerID '3ngking1jtejtw'
 
-Output:
+**Output:**
 
 
 {Logo}
@@ -220,7 +220,7 @@ You will get the service state for all existing citrix cloud services. Are the s
 ### How to use “Get-PartnerCustomerservicestates”?
 Get-PartnerCustomerServiceStates -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -partnerID '3asdf21' -customerID '3ngking1jtejtw'
 
-Output:
+**Output:**
 
 
 serviceName                : accesssecurity
@@ -248,7 +248,7 @@ This function creates a new customer by partner and set up the connection betwee
 New-PartnerCustomer -token 'CwsAuth Bearer=eyJhbGc23344ksfdjydfdssInR5cCI6IkpXVCJ9.....' -partnerID '123adsf123' -address 'Meisterstrasse 1123' -addressCity 'Amberg' -addressCountry 'Germany' -addressState 'Bavaria' -addressZip '84563' -companyName 'Meister32 GmbH' -emailAddress 'meister3@mmail.com' -firstName 'Harald' -lastName 'Muellnerer' -phoneNumber '2363356' -countryCode '05465' -areaCode '0049'
 
 
-Output:
+**Output:**
 
 
 'Customer was successfully created!
@@ -279,7 +279,7 @@ How to use “Test-PartnerCustomer”?
 Test-PartnerCustomer -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -customerID '3ngking1jtejtw'
 
 
-Output:
+**Output:**
 
 
 True
