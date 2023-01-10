@@ -32,15 +32,25 @@ Get-PartnerCustomer -token $authbearer -partnerID $partnerID | Where-Object {$_.
 **Output:**
 
 notifictionCount    : 0
+
 CustomerInformation : Meister44 GmbH
+
 orgId               : 1234567
+
 customerId          : 3i1tjgnjktew 
+
 type                : Managed
+
 adminFullName       : 
+
 adminEmail          : 
+
 services            : 
+
 federatedDomains    : 
+
 connectionId        : 2920af5-847b632c-3-3adb10-4edf25443f
+
 serviceStates       : {@{serviceName=AccessSecurity; type=Default; quantity=0; state=NotOnboarded; daysToExpiration=}, @{serviceName=Aggregation; type=Default; quantity=0; state=NotOnboarded; daysToExpiration=}, @{serviceName=BrowserService; type=Default; 
                       quantity=0; state=NotOnboarded; daysToExpiration=}, @{serviceName=CAS; type=Default; quantity=0; state=NotOnboarded; daysToExpiration=}...}
 
@@ -56,11 +66,17 @@ Get-PartnerCustomer -token $authbearer -partnerID '3asdf21' | select CustomerInf
 CustomerInformation                                                  notifictionCount orgId   
  
 Meister32 GmbH                                                                      2 66796318
+
 Meister36 GmbH                                                                      0 66796966
+
 Meister99 GmbH                                                                      9 66796317
+
 Muiasd GmbH                                                                         0 66796319
+
 Muiasfd GmbH                                                                       60 66796316
+
 Muster166 GmbH                                                                      0 66796688
+
 Muster163 GmbH                                                                      0 66796686
 
 ## Get-PartnerConnectionInfo
@@ -73,14 +89,23 @@ Get-PartnerConnectionInfo -token $authbearer -partnerID '3asdf21' -customerID '3
 
 
 connectionId             : b3c00dfc-32b6-4573-863a-2f294a7d4e1f
+
 partnerId                : 3asdf21
+
 customerId               : 3ngking1jtejtw
+
 type                     : Managed
+
 CustomerAdminDisplayName : Meister44 GmbH
+
 CustomerorgId            : 51364727
+
 CustomeradminFullName    : 
+
 CustomerAdminEmail       : 
+
 services                 : 
+
 federatedDomains         : 
 
 ## Get-PartnerCustomerCaseCount
@@ -124,18 +149,31 @@ Get-PartnerCustomerConnection -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJz
 
 
 connectionId             : b00fcd3c-32b6-4573-863a-294dea2f174f
+
 partnerId                : 3asdf21
+
 customerId               : 3ngking1jtejtw
+
 type                     : Managed
+
 CustomerAdminDisplayName : Meister44 GmbH
+
 CustomerorgId            : 1234567
+
 CustomeradminFullName    : 
+
 CustomerAdminEmail       : 
+
 PartnerAdminDisplayName  : IT Preischl
+
 PartnerorgId             : 58751256
+
 PartnerAdminFullName     : 
+
 PartnerAdminEmail        : 
+
 services                 : 
+
 federatedDomains         :
 
 ## Get-PartnerCustomerCount
@@ -161,15 +199,25 @@ License Active Use Information for customer: Meister44 GmbH
 Customer is licensed with User/Device Licenses.
 
 customerId                       : 3ngking1jtejtw
+
 dailyActiveUseValue              : 2868
+
 dailyActiveUsePercentage         : 
+
 monthlyActiveUseValue            : 3896
+
 monthlyActiveUsePercentage       : 
+
 dailyDeviceActiveUseValue        : 2685
+
 dailyDeviceActiveUsePercentage   : 
+
 monthlyDeviceActiveUseValue      : 4985
+
 monthlyDeviceActiveUsePercentage : 
+
 productName                      : XenDesktop
+
 recordingTimeStamp               : 2023-01-10T19:26:51.7601992+00:00
 
 
@@ -183,22 +231,39 @@ Get-PartnerCustomerInfo -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6II
 
 
 name             : 3ngking1jtejtw
+
 displayName      : Meister44 GmbH
+
 nickname         : Meister44 GmbH
+
 orgId            : 1234567
+
 orgIds           : 
+
 address1         : Meisterstrasse 1123
+
 address2         : Meisterstrasse 1123
+
 address3         : 
+
 addressCity      : Musterstadt
+
 addressCountry   : Germany
+
 addressState     : Bavaria
+
 addressZip       : 84563
+
 mainPhone        : 2363356
+
 mainPhoneArea    : 0049
+
 mainPhoneCountry : 05465
+
 embargoed        : False
+
 memberships      : {}
+
 logoUrl          : 
 
 
@@ -224,19 +289,31 @@ Get-PartnerCustomerServiceStates -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5
 
 
 serviceName                : accesssecurity
+
 state                      : Production
+
 type                       : Production
+
 quantity                   : 50
+
 daysToExpiration           : 365
+
 notificationsDisabled      : False
+
 futureEntitlementStartDate : 
 
 serviceName                : aggregation
+
 state                      : Production
+
 type                       : Production
+
 quantity                   : 1
+
 daysToExpiration           : 2913530
+
 notificationsDisabled      : False
+
 futureEntitlementStartDate : 
 
 ....
@@ -255,27 +332,48 @@ New-PartnerCustomer -token 'CwsAuth Bearer=eyJhbGc23344ksfdjydfdssInR5cCI6IkpXVC
 
 
 name             : 3ngking1jtejtw
+
 displayName      : Meister44 GmbH
+
 nickname         : Meister44 GmbH
+
 orgId            : 1234567
+
 orgIds           : 
+
 address1         : Meisterstrasse 1123
+
 address2         : Meisterstrasse 1123
+
 address3         : 
+
 addressCity      : Musterstadt
+
 addressCountry   : Germany
+
 addressState     : Bavaria
+
 addressZip       : 84563
+
 mainPhone        : 2363356
+
 mainPhoneArea    : 0049
+
 mainPhoneCountry : 05465
+
 embargoed        : False
+
 memberships      : {}
+
 logoUrl          : 
-Test-PartnerCustomer
+
+
+## Test-PartnerCustomer
+
 This function checks whether the service is operational.
 
-How to use “Test-PartnerCustomer”?
+### How to use “Test-PartnerCustomer”?
+
 Test-PartnerCustomer -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -customerID '3ngking1jtejtw'
 
 
