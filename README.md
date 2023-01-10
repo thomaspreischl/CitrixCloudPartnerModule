@@ -10,7 +10,7 @@ The function uses the Invoke-RestMethod command to make the authorization on Cit
 Connect-CitrixAPI -partnerID '3asdf21' -ClientID 'no23j4m-352e-4fa1-a900-123sdf123' -ClientSecret '3k3l-1jk54J123nd-GKAGhZUQ=='
 
 Output:
--------
+
 
 Your Authorization Pricipal is:thomas.preischl@googlemail.com
 
@@ -27,22 +27,22 @@ Here you will find examples how to use the command and how to sort the output.
 **Example 1:**
 Get all information about one customer with specified OrgID
 
->Get-PartnerCustomer -token $authbearer -partnerID $partnerID | Where-Object {$_.OrgID -eq '1234567'}
->
->Output:
->-------
->notifictionCount    : 0
->CustomerInformation : Meister44 GmbH
->orgId               : 1234567
->customerId          : 3i1tjgnjktew 
->type                : Managed
->adminFullName       : 
->adminEmail          : 
->services            : 
->federatedDomains    : 
->connectionId        : 2920af5-847b632c-3-3adb10-4edf25443f
->serviceStates       : {@{serviceName=AccessSecurity; type=Default; quantity=0; state=NotOnboarded; daysToExpiration=}, @{serviceName=Aggregation; type=Default; quantity=0; state=NotOnboarded; daysToExpiration=}, @>>>{serviceName=BrowserService; type=Default; 
->                      quantity=0; state=NotOnboarded; daysToExpiration=}, @{serviceName=CAS; type=Default; quantity=0; state=NotOnboarded; daysToExpiration=}...}
+Get-PartnerCustomer -token $authbearer -partnerID $partnerID | Where-Object {$_.OrgID -eq '1234567'}
+
+Output:
+
+notifictionCount    : 0
+CustomerInformation : Meister44 GmbH
+orgId               : 1234567
+customerId          : 3i1tjgnjktew 
+type                : Managed
+adminFullName       : 
+adminEmail          : 
+services            : 
+federatedDomains    : 
+connectionId        : 2920af5-847b632c-3-3adb10-4edf25443f
+serviceStates       : {@{serviceName=AccessSecurity; type=Default; quantity=0; state=NotOnboarded; daysToExpiration=}, @{serviceName=Aggregation; type=Default; quantity=0; state=NotOnboarded; daysToExpiration=}, @{serviceName=BrowserService; type=Default; 
+                      quantity=0; state=NotOnboarded; daysToExpiration=}, @{serviceName=CAS; type=Default; quantity=0; state=NotOnboarded; daysToExpiration=}...}
 
 
 **Example 2:**
@@ -51,10 +51,10 @@ Filter multiple attributes over all your customers.
 Get-PartnerCustomer -token $authbearer -partnerID '3asdf21' | select CustomerInformation, notifictionCount, OrgID
 
 Output:
--------
+
 
 CustomerInformation                                                  notifictionCount orgId   
--------------------                                                  ---------------- -----   
+ 
 Meister32 GmbH                                                                      2 66796318
 Meister36 GmbH                                                                      0 66796966
 Meister99 GmbH                                                                      9 66796317
@@ -67,35 +67,35 @@ Muster163 GmbH                                                                  
 With this function the partner – customer link for a specific customer can be displayed. In addition, the OrgID can be retrieved directly.
 
 ### How to use “Get-PartnerConnectionInfo”?
->Get-PartnerConnectionInfo -token $authbearer -partnerID '3asdf21' -customerID '3ngking1jtejtw'
->
->Output:
->-------
->
->connectionId             : b3c00dfc-32b6-4573-863a-2f294a7d4e1f
->partnerId                : 3asdf21
->customerId               : 3ngking1jtejtw
->type                     : Managed
->CustomerAdminDisplayName : Meister44 GmbH
->CustomerorgId            : 51364727
->CustomeradminFullName    : 
->CustomerAdminEmail       : 
->services                 : 
->federatedDomains         : 
+Get-PartnerConnectionInfo -token $authbearer -partnerID '3asdf21' -customerID '3ngking1jtejtw'
+
+Output:
+
+
+connectionId             : b3c00dfc-32b6-4573-863a-2f294a7d4e1f
+partnerId                : 3asdf21
+customerId               : 3ngking1jtejtw
+type                     : Managed
+CustomerAdminDisplayName : Meister44 GmbH
+CustomerorgId            : 51364727
+CustomeradminFullName    : 
+CustomerAdminEmail       : 
+services                 : 
+federatedDomains         : 
 
 ## Get-PartnerCustomerCaseCount
 This function gives you the number of support tickets for the customer.
 
 ### How to use “Get-PartnerCustomerCaseCount”?
 
->Get-PartnerCustomerCaseCount -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -partnerID '3asdf21' -customerID '3ngking1jtejtw'
->
->Output:
->-------
->
->customerId       count statusCode message
->----------       ----- ---------- -------
->3ngking1jtejtw     0    OK 
+Get-PartnerCustomerCaseCount -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -partnerID '3asdf21' -customerID '3ngking1jtejtw'
+
+Output:
+
+
+customerId       count statusCode message
+
+3ngking1jtejtw     0    OK 
 
 
 ## Get-PartnerCustomerAccessInfo
@@ -105,12 +105,12 @@ This function gives you information, which access type the user which is used fo
 Get-PartnerConnectionInfo -token $authbearer -partnerID '3asdf21' -customerID '3ngking1jtejtw'
 
 Output:
--------
+
 
 VERBOSE: Access Information for customer: Meister44 GmbH
 
 customerId   type statusCode message
-----------   ---- ---------- -------
+
 3ngking5ejtw Full OK    
 
 
@@ -121,7 +121,7 @@ This function gives you the number of support tickets for the customer.
 Get-PartnerCustomerConnection -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -partnerID '3asdf21' -customerID '3ngking1jtejtw'
 
 Output:
--------
+
 
 connectionId             : b00fcd3c-32b6-4573-863a-294dea2f174f
 partnerId                : 3asdf21
@@ -145,7 +145,7 @@ This function gives you the count of customer detailed information. This means, 
 Get-PartnerCustomerCount -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -partnerID '3asdf21'
 
 Output:
--------
+
 
 39
 
@@ -156,7 +156,7 @@ Get the current cloud license active use of cvad for specific customer and also 
 Get-PartnerCustomerCVADActiveUse -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -partnerID '3asdf21' -customerID '3ngking1jtejtw'
 
 Output:
--------
+
 License Active Use Information for customer: Meister44 GmbH
 Customer is licensed with User/Device Licenses.
 
@@ -180,7 +180,7 @@ Get connected customer’s account information for Partner. You will get back th
 Get-PartnerCustomerInfo -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -partnerID '3asdf21' -customerID '3ngking1jtejtw'
 
 Output:
--------
+
 
 name             : 3ngking1jtejtw
 displayName      : Meister44 GmbH
@@ -209,7 +209,7 @@ If a customer account logo is currently set, you will get it back here.
 Get-PartnerCustomerLogo -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -partnerID '3asdf21' -customerID '3ngking1jtejtw'
 
 Output:
--------
+
 
 {Logo}
 
@@ -221,7 +221,7 @@ You will get the service state for all existing citrix cloud services. Are the s
 Get-PartnerCustomerServiceStates -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -partnerID '3asdf21' -customerID '3ngking1jtejtw'
 
 Output:
--------
+
 
 serviceName                : accesssecurity
 state                      : Production
@@ -249,7 +249,7 @@ New-PartnerCustomer -token 'CwsAuth Bearer=eyJhbGc23344ksfdjydfdssInR5cCI6IkpXVC
 
 
 Output:
--------
+
 
 'Customer was successfully created!
 
@@ -280,7 +280,7 @@ Test-PartnerCustomer -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9
 
 
 Output:
--------
+
 
 True
 
