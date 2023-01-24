@@ -1,9 +1,9 @@
 function Get-PartnerCustomerOrdersPlaced {
     <#
           .SYNOPSIS
-          Get connected customer's placed drders.
+          Get connected customer's placed orders.
           .DESCRIPTION
-          This function gives you connected customer's placed orders. orderid, startdate, purchaseorderid, licenseAllocationLink, Packages
+          This function gives you connected customer's placed orders for partner. orderid, startdate, purchaseorderid, licenseAllocationLink, Packages
           .PARAMETER partnerID
           partnerID of your Citrix Cloud Tenant is mandatory to connect to the right Tenant.
         .PARAMETER customerID
