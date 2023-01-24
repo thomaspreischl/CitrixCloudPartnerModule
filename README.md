@@ -318,6 +318,53 @@ futureEntitlementStartDate :
 
 ....
 
+## Get-PartnerCustomerOrdersPlaced
+Get connected customer's placed orders for partner. You will get back  orderid, startdate, purchaseorderid, licenseAllocationLink, packages
+
+### How to use “Get-PartnerCustomerOrdersPlaced”?
+*Get-PartnerCustomerOrdersPlaced -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -partnerID '3asdf21' -customerID '3ngking1jtejtw'*
+
+**Output:**
+
+
+orderId               : 123456789
+
+startDate             : 2022-10-10T00:00:00
+
+purchaseOrderId       : 12345678
+
+licenseAllocationLink : https://licensing.citrix.com/licensingui/#/easy/xyxyxxyxyxxyxyxyxyx
+
+packages              : {@{}}
+
+
+## Get-PartnerCustomerEnabledFeatures
+et connected customer's license enabled Features for Partner.. You will get back a list with names of features
+
+### How to use "Get-PartnerCustomerEnabledFeatures"?
+*Get-PartnerCustomerEnabledFeatures -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -partnerID '3asdf21' -customerID '3ngking1jtejtw'*
+
+**Output:**
+
+XenDesktop
+
+
+## Get-PartnerCustomerEntitledProducts
+et connected customer's license enabled Products for Partner.. You will get back a list with names of products
+
+### How to use "Get-PartnerCustomerEntitledProducts"?
+*Get-PartnerCustomerEnabledFeatures -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -partnerID '3asdf21' -customerID '3ngking1jtejtw'*
+
+**Output:**
+
+*
+swaau
+luicustomerusermapsql
+cas-feature-recommended-action
+wspprivatecachecitrixauthchallenge
+*
+
+
 ## New-PartnerCustomer
 This function creates a new customer by partner and set up the connection between partner and customer. The customer will be automatically linked to your account as partner. Customer Admin also get an email that he now can connect to his tenant.
 
