@@ -350,7 +350,7 @@ XenDesktop
 
 
 ## Get-PartnerCustomerEntitledProducts
-et connected customer's license enabled Products for Partner.. You will get back a list with names of products
+Get connected customer's license enabled Products for Partner.. You will get back a list with names of products
 
 ### How to use "Get-PartnerCustomerEntitledProducts"?
 *Get-PartnerCustomerEnabledFeatures -token 'CwsAuth Bearer=ehJcciSRpICJ1bIsGIUkNnV5iJziyC6IIXO9....' -partnerID '3asdf21' -customerID '3ngking1jtejtw'*
@@ -363,6 +363,24 @@ luicustomerusermapsql
 cas-feature-recommended-action
 wspprivatecachecitrixauthchallenge
 *
+
+## Remove-PartnerCustomerXenDesktopService
+This function removes the XenDesktop Service from the customer by partner. Its important that no Configuration is active.
+
+
+### How to use “Remove-PartnerCustomerXenDesktopService”?
+*Remove-PartnerCustomerXenDesktop -token 'CwsAuth Bearer=eyJhbGc23344ksfdjydfdssInR5cCI6IkpXVCJ9.....' -partnerID '123adsf123' -clientID '12345sdfx'
+
+
+**Output:**
+
+
+'Service XenDesktop Successfully Removed!
+
+status           redirectUrl errorUrl
+------           ----------- --------
+DeleteInProgress                
+
 
 
 ## New-PartnerCustomer
