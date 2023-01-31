@@ -43,6 +43,8 @@ function Get-PartnerCustomerAccessInfo {
     $response = Invoke-RestMethod -Method GET -Uri $Uri -Headers $headers 
     $response = $response.items
 
+    $customername = Get-PartnerCustomerInfo -token $token -partnerID $partnerID -customerID $customerID | select displayName
+    $customername = $customername.displayName
 
     Write-Verbose "Access Information for customer: $customername" -Verbose
 
